@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Responsive Card Layout</title> 
+        <style> 
+            body { 
+                background-image : url('https://img.freepik.com/free-photo/autumn-leafs-tablet-display-technology-generative-ai_188544-19435.jpg?semt=ais_hybrid&w=740&q=80 '); 
+                background-repeat: no-repeat; 
+                background-size: cover; 
+                background-position: center; 
+                margin: 0; 
+                height: 100vh; 
+            } 
+            .card_container { 
+                display: flex; 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                align-items: center; 
+                align-content: center; 
+                min-height: 100vh; 
+            } 
+            .card{ 
+               width: 400px; 
+               height: 650px; 
+               background-color: rgba(255, 255, 255, 0.25); 
+               backdrop-filter: blur(12px); 
+               border-radius: 10px; 
+               overflow: hidden; 
+               margin: 10px 10px 10px 10px; 
+               padding: 20px; 
+               text-align: center; 
+            } 
+            .card img{ 
+                 width: 100%; 
+                 height: 400px; 
+                 object-fit: cover; 
+                 border-radius: 10px; 
+                  
+            } 
+            h1 { 
+                text-align: center; 
+                color: black; 
+            } 
+            p { 
+                color: black; 
+            } 
+            button{ 
+                background-color:rgba(255, 255, 255, 0.25); 
+                color: blue; 
+            } 
+            .card button:hover{ 
+                background-color: aqua; 
+            } 
+        </style> 
+    </head> 
+    <body> 
+        <div class="card_container"> 
+            <div class="card"> 
+                <h1>Red Magic 9 Pro </h1> 
+                <img src="https://images-cdn.ubuy.co.in/662e239c440f9c0a8458ec19-redmagic-9-pro-5g-smartphone-120hz.jpg"> 
+                <p>The REDMAGIC 9 Pro features a sleek, flat rear design with durable glass, and no camera bump in sight, giving it a super comfortable feel. Custom lights in the turbofan and shoulder triggers add a unique touch to its impressive profile.
+                <a href="https://eu.redmagic.gg/pages/redmagic-9-pro?srsltid=AfmBOopUCdmExyWwa2zKACMu0jmWVMfdZmimToqKXAoQ21sh9zLWehSz" target="_blank"> 
+                <button>Learn More</button> 
+               </a> 
+            </div> 
+            <div class="card"> 
+                <h1>Samsung Galaxy S24 Ultra</h1> 
+                <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-sm-s928bztqins-539573347?$720_576_JPG$"> 
+                <p>Outstanding Pro-Grade Camera System – The Galaxy S24 Ultra sports a powerful quad-camera setup with a 200 MP main sensor, optimized telephoto and ultra-wide lenses, and advanced image processing. It captures detailed photos and videos in various lighting conditions, giving users professional-quality photography on a smartphone.</p> 
+                <a href="https://www.samsung.com/in/business/smartphones/galaxy-s/galaxy-s24-ultra-sm-s928bztqins/?srsltid=AfmBOoqBbSGq7DCrWkY81nQE9-WU75dNod8pHhWes2XHo5UoiwzoKxNG" target="_blank"> 
+                <button>Learn More</button> 
+               </a> ss
+            </div> 
+            <div class="card"> 
+                <h1>iPhone 17 Pro and Pro Max</h1> 
+                <img src="https://www.techspot.com/images2/news/bigimage/2025/09/2025-09-09-image-34.jpg"> 
+                <P>Advanced Camera & Imaging System Both the iPhone 17 Pro and Pro Max are expected to feature next-level camera hardware and software, including improved sensors and computational photography capabilities. This lets users capture sharper photos, better low-light shots, and professional-grade video.</P> 
+                <a href="https://www.apple.com/in/iphone-17-pro/" target="_blank"> 
+                <button>Learn More</button> 
+               </a> 
+            </div> 
+        </div> 
+    </body> 
+</html>
