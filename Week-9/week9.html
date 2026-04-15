@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Executor</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+            background-color: antiquewhite;
+            
+        }
+
+        .section {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            background-color: rgb(247, 195, 195);
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 150px;
+            background-color: rgb(208, 225, 153);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: wheat;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+<h2>To Verify Mathematical values</h2>
+
+
+<div class="section">
+    <h3>Addition</h3>
+    <input type="number" id="add1" placeholder="Enter first number">
+    <input type="number" id="add2" placeholder="Enter second number">
+    <br>
+    <button onclick="addition()">Add</button>
+</div>
+
+
+<div class="section">
+    <h3>Subtraction</h3>
+    <input type="number" id="sub1" placeholder="Enter first number">
+    <input type="number" id="sub2" placeholder="Enter second number">
+    <br>
+    <button onclick="subtraction()">Subtract</button>
+</div>
+
+
+<div class="section">
+    <h3>Even / Odd</h3>
+    <input type="number" id="evenNum" placeholder="Enter number">
+    <br>
+    <button onclick="evenOdd()">Check</button>
+</div>
+
+
+<div class="section">
+    <h3>Factorial</h3>
+    <input type="number" id="factNum" placeholder="Enter number">
+    <br>
+    <button onclick="factorial()">Find</button>
+</div>
+
+
+<div class="section">
+    <h3>Prime Number</h3>
+    <input type="number" id="primeNum" placeholder="Enter number">
+    <br>
+    <button onclick="prime()">Check</button>
+</div>
+
+
+<div class="section">
+    <h3>Armstrong Number</h3>
+    <input type="number" id="armNum" placeholder="Enter number">
+    <br>
+    <button onclick="armstrong()">Check</button>
+</div>
+
+<div id="output"></div>
+
+<script>
+    function addition() {
+        let a = parseInt(document.getElementById("add1").value);
+        let b = parseInt(document.getElementById("add2").value);
+
+        if (isNaN(a) || isNaN(b)) {
+            output("Please enter both numbers!");
+            return;
+        }
+
+        output("Addition Result: " + (a + b));
+    }
+
+    function subtraction() {
+    let a = parseInt(document.getElementById("sub1").value);
+    let b = parseInt(document.getElementById("sub2").value);
+
+    if (isNaN(a) || isNaN(b)) {
+        output("Please enter both numbers!");
+        return;
+    }
+
+    output("Subtraction Result: " + (a - b));
+    }
+
+    function evenOdd() {
+        let num = parseInt(document.getElementById("evenNum").value);
+
+        if (isNaN(num)) {
+            output("Please enter a number!");
+            return;
+        }
+
+        let result = (num % 2 === 0) ? "Even" : "Odd";
+        output("Number is: " + result);
+    }
+
+    function factorial() {
+        let num = parseInt(document.getElementById("factNum").value);
+
+        if (isNaN(num) || num < 0) {
+            output("Enter a valid positive number!");
+            return;
+        }
+
+        let fact = 1;
+        for (let i = 1; i <= num; i++) {
+            fact *= i;
+        }
+
+        output("Factorial of " + num + " is: " + fact);
+    }
+
+    function output(msg) {
+        document.getElementById("output").innerHTML = msg;
+    }
+
+    function prime() {
+        let num = parseInt(document.getElementById("primeNum").value);
+
+        if (isNaN(num) || num < 2) {
+            output("Enter a number greater than 1!");
+            return;
+        }
+
+        let isPrime = true;
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        output(isPrime ? num + " is Prime" : num + " is Not Prime");
+    }
+
+    function armstrong() {
+        let num = parseInt(document.getElementById("armNum").value);
+
+        if (isNaN(num) || num < 0) {
+            output("Enter a valid number!");
+            return;
+        }
+
+        let sum = 0;
+        let temp = num;
+        let digits = num.toString().length;
+
+        while (temp > 0) {
+            let digit = temp % 10;
+            sum += Math.pow(digit, digits);
+            temp = Math.floor(temp / 10);
+        }
+
+        output(sum === num 
+            ? num + " is an Armstrong Number" 
+            : num + " is Not an Armstrong Number");
+    }
+</script>
+
+</body>
+</html>
