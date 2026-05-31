@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printing Odd And Even Numbers</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+            background-color: salmon;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Printing Odd And Even Numbers</h2>
+
+<input type="number" id="limit" placeholder="Enter a number">
+<br>
+<button onclick="checkNumbers()">Check</button>
+
+<div id="output"></div>
+
+<script>
+    function checkNumbers() {
+        let n = Number(document.getElementById("limit").value);
+        let result = "";
+
+        for (let i = 0; i <= n; i++) {
+            if (i % 2 === 0) {
+                result += i + " is Even <br>";
+            } else {
+                result += i + " is Odd <br>";
+            }
+        }
+
+        document.getElementById("output").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>

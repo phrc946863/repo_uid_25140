@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            
+            font-family: Arial;
+            text-align: left;
+            margin-top: 50px;
+            background-color: antiquewhite;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 150px;
+            background-color: silver;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<div>
+    <style background-image: url(LOGO.png) ;background-repeat: no-repeat; width: 100px; height: 100px;text-align: right;></style>
+</div>
+<body>
+
+<h2>Grade Calculator</h2>
+<h3>Discrete Maths</h3>
+<input type="number" id="s1" placeholder="Enter Marks"><br>
+<h3>Modern Physics</h3>
+<input type="number" id="s2" placeholder="Enter Marks"><br>
+<h3>Linear Algebra</h3>
+<input type="number" id="s3" placeholder="Enter Marks"><br>
+<h3>GGI</h3>
+<input type="number" id="s4" placeholder="Enter Marks"><br>
+<h3>UID</h3>
+<input type="number" id="s5" placeholder="Enter Marks"><br>
+<h3>OOPS</h3>
+<input type="number" id="s6" placeholder="Enter Marks"><br>
+<button onclick="calculateGrade()">Calculate</button>
+
+<script>
+function calculateGrade() {
+    let m1 = Number(document.getElementById("s1").value);
+    let m2 = Number(document.getElementById("s2").value);
+    let m3 = Number(document.getElementById("s3").value);
+    let m4 = Number(document.getElementById("s4").value);
+    let m5 = Number(document.getElementById("s5").value);
+    let m6 = Number(document.getElementById("s6").value);
+
+    let marks = [m1, m2, m3, m4, m5, m6];
+
+    // Validation: check empty, NaN, and range
+    for (let i = 0; i < marks.length; i++) {
+        if (isNaN(marks[i]) || marks[i] < 0 || marks[i] > 100) {
+            alert("Please enter valid marks between 0 and 100 for all subjects!");
+            return;
+        }
+    }
+
+    let total = m1 + m2 + m3 + m4 + m5 + m6;
+    let avg = total / 6;
+
+    let grade;
+
+    if (avg >= 90) {
+        grade = "A+";
+    } else if (avg >= 75) {
+        grade = "A";
+    } else if (avg >= 60) {
+        grade = "B";
+    } else if (avg >= 50) {
+        grade = "C";
+    } else if (avg >= 40) {
+        grade = "D";
+    } else {
+        grade = "Fail";
+    }
+
+    alert("Average Marks: " + avg.toFixed(2) + "\nGrade: " + grade);
+}
+</script>
+
+</body>
+</html>
