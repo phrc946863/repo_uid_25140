@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Password Checker</title>
+<style>
+body{
+  font-family:Arial;
+  background:linear-gradient(135deg, rgb(197, 164, 164), darkred);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+.box{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+  width:300px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+h2{
+  color:darkred;
+}
+input{
+  padding:12px;
+  width:250px;
+  border:2px solid red;
+  border-radius:8px;
+  outline:none;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Password Checker</h2>
+  <input type="password" id="password" placeholder="Enter password" oninput="checkPassword()">
+  <p id="result"></p>
+</div>
+
+<script>
+function checkPassword(){
+  let password = document.getElementById("password").value;
+  let result = document.getElementById("result");
+
+  if(password.length == 0){
+    result.innerHTML = "";
+  }
+   else if(password.length < 8){
+    result.innerHTML = "Weak Password";
+    result.style.color = "red";
+ }
+  else{
+    result.innerHTML = "Strong Password";
+    result.style.color = "green";
+ }
+}
+</script>
+
+</body>
+</html>
